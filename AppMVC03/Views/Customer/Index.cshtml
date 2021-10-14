@@ -1,0 +1,69 @@
+﻿@model IEnumerable<AppMVC03.Models.venta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.folio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_empresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fec_salida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.observaciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_producto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.folio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_empresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fec_salida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.observaciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id = item.idventa }) |
+            @Html.ActionLink("Detalles", "Detalle", new { id = item.idventa }) |
+            @Html.ActionLink("Eliminar", "Eliminar", new { id = item.idventa })
+        </td>
+    </tr>
+}
+
+</table>
